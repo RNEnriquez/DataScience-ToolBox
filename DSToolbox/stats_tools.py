@@ -1,3 +1,5 @@
+import numpy as np
+
 class Descriptive_Statistics:
 
     def __init__(self, data):
@@ -28,5 +30,19 @@ class Descriptive_Statistics:
                 if value == max(counts.values()):
                     return key
 
+    def variance(self):
+        self.data = np.array(self.data)
+        return ((self.data - self.mean())**2).sum() / len(self.data)
+
+    def standardDev(self):
+        return self.variance()**(0.5)
+
+    def coef_variation(self):
+        return (self.standardDev() / self.mean()) * 100
+
     def summary(self):
-        return {"Mean": self.mean(), "Median": self.median(), "Mode": self.mode()}
+        return {"Mean": self.mean(), "Median": self.median(),
+                "Mode": self.mode(), "Variance": self.variance(),
+                "StandardDeviation": self.standardDev(),
+                "CoefficientOfVariation": self.coef_variation()}
+                
