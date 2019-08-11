@@ -1,4 +1,4 @@
-class CentralTendency:
+class Descriptive_Statistics:
 
     def __init__(self, data):
         self.data = list(data)
