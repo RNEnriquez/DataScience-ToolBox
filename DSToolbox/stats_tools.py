@@ -45,4 +45,9 @@ class Descriptive_Statistics:
                 "Mode": self.mode(), "Variance": self.variance(),
                 "StandardDeviation": self.standardDev(),
                 "CoefficientOfVariation": self.coef_variation()}
-                
+
+class Inferential_Statistics:
+    pass
+
+class Bayesian_Statistics:
+    pass
