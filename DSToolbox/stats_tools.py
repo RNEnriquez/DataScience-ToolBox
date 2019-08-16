@@ -5,8 +5,11 @@ class Descriptive_Statistics:
     def __init__(self, data):
         self.data = list(data)
 
-    def mean(self):
-        return sum(self.data) / len(self.data)
+    def mean(self, scale=2):
+        if scale != 2:
+            return round(sum(self.data) / len(self.data), scale)
+        else:
+            return round(sum(self.data) / len(self.data), scale)
 
     def median(self):
         self.data.sort()
@@ -19,6 +22,7 @@ class Descriptive_Statistics:
             return (idx_1 + idx_2) / 2
 
     def mode(self):
+        self.data = list(self.data)
         counts = {}
         unique_nums = set(self.data)
         for digit in unique_nums:
@@ -30,15 +34,24 @@ class Descriptive_Statistics:
                 if value == max(counts.values()):
                     return key
 
-    def variance(self):
+    def variance(self, scale=2):
         self.data = np.array(self.data)
-        return ((self.data - self.mean())**2).sum() / len(self.data)
+        if scale != 2:
+            return round(((self.data - self.mean())**2).sum() / len(self.data), scale)
+        else:
+            return round(((self.data - self.mean())**2).sum() / len(self.data), scale)
 
-    def standardDev(self):
-        return self.variance()**(0.5)
+    def standardDev(self, scale=2):
+        if scale != 2:
+            return round(self.variance()**(0.5), scale)
+        else:
+            return round(self.variance()**(0.5), scale)
 
-    def coef_variation(self):
-        return (self.standardDev() / self.mean()) * 100
+    def coef_variation(self, scale=2):
+        if scale != 2:
+            return round((self.standardDev() / self.mean()), scale)
+        else:
+            return round((self.standardDev() / self.mean()), scale)
 
     def summary(self):
         return {"Mean": self.mean(), "Median": self.median(),
