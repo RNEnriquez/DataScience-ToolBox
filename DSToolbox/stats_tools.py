@@ -53,6 +53,44 @@ class Descriptive_Statistics:
         else:
             return round((self.standardDev() / self.mean()), scale)
 
+    def quartiles(self):
+        pass
+
+    def skewness(self):
+        pass
+
+    def kurtosis(self):
+        pass
+
+    def z_score(self):
+        pass
+
+    def percentile_rank(self):
+        pass
+
+    def fiveNumber_summary(self):
+        pass
+
+    def minimum(self):
+        pass
+
+    def maximum(self):
+        pass
+
+    def outliers(self):
+        pass
+
+    def how_normal(self):
+        # Use empirical rule to return a percenatge of how close the data is
+        # to being perfectly normally distributed
+        pass
+
+    def coVariance(self):
+        pass
+
+    def correlation_coef(self):
+        pass
+
     def summary(self):
         return {"Mean": self.mean(), "Median": self.median(),
                 "Mode": self.mode(), "Variance": self.variance(),
@@ -60,7 +98,12 @@ class Descriptive_Statistics:
                 "CoefficientOfVariation": self.coef_variation()}
 
 class Inferential_Statistics:
-    pass
+
+    def __init__(self, data):
+        self.data = data
+
+    def confidence_interval(self):
+        pass 
 
 class Bayesian_Statistics:
     pass
